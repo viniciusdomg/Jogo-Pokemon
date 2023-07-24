@@ -1,4 +1,4 @@
-const cont = document.querySelector('.container');
+const cont = document.querySelector('.jogo');
 
 
 function paginaJogar(){
