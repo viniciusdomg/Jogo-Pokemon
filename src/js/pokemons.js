@@ -1,19 +1,19 @@
 const pokeContainer = document.querySelector("#pokeContainer")
 const pokemonCount = 151
 const colors = {
-    fire: '#FF0000',
+    fire: '#FF6347',
     grass: '#228B22',
     electric: '#FFFF00',
     water: '#00BFFF',
     ground: '#F4A460',
     rock: '#8B4513',
     fairy: '#DDA0DD',
-    poison: '#A020F0',
+    poison: '#9932CC',
     bug: '#9ACD32',
     dragon: '#97b3e6',
-    psychic: '#FF00FF',
+    psychic: '#FF69B4',
     flying: '#FFF0F5',
-    fighting: '#8B0000',
+    fighting: '#A52A2A',
     normal: '#FFE4C4'
 }
 
@@ -39,22 +39,40 @@ const createPokemonCard = (poke) => {
     const id = poke.id.toString().padStart(3,'0')
 
     const pokeTypes = poke.types.map(type => type.type.name)
-    const type = mainTypes.find(type => pokeTypes.indexOf(type) > -1)
-    const color = colors[type]
+    let pokemonInnerHTML = '';
+    if(pokeTypes.length === 2){
+        const type1 = mainTypes.find(type => pokeTypes.indexOf(type) > -1);
+        const type2 = pokeTypes.find(type => type !== type1);
+        const color = colors[type1]
+        card.style.backgroundColor = color
+        pokemonInnerHTML = `
+            <div class="imgContainer">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${poke.id}.svg" alt="${name}">
+            </div>
+            <div class="info">
+                <span class="number">#${id}</span>
+                <h3 class="name">${name}</h3>
+                <small class="type">Tipo 1: <span>${type1}</span></small><br>
+            <small class="type">Tipo 2: <span>${type2}</span></small>
+            </div>
+        `;
+    }else{
+        const type1 = mainTypes.find(type => pokeTypes.indexOf(type) > -1);
+        const color = colors[type1]
 
-    card.style.backgroundColor = color
+        card.style.backgroundColor = color
 
-    const pokemonInnerHTML = `
-    <div class="imgContainer">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${poke.id}.svg" alt="${name}">
-    </div>
-    <div class="info">
-        <span class="number">#${id}</span>
-        <h3 class="name">${name}</h3>
-        <small class="type">Type: <span>${type}</span></small>
-    </div>
-    `
-
+        pokemonInnerHTML = `
+            <div class="imgContainer">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${poke.id}.svg" alt="${name}">
+            </div>
+            <div class="info">
+                <span class="number">#${id}</span>
+                <h3 class="name">${name}</h3>
+                <small class="type">Tipo: <span>${type1}</span></small>
+            </div>
+        `;
+    }
     card.innerHTML = pokemonInnerHTML
 
     card.addEventListener('click', () => openModal({ name, id, type }));
