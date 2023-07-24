@@ -1,0 +1,27 @@
+input[type="button"]{
+    margin: 50px;
+    width: 250px;
+    height: 75px;
+    background-color:crimson;
+    font-size: 50px;
+    font-family: 'VT323', monospace;
+    border-radius: 12px;
+    border: 3px solid black;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    bottom: 10px;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url('/src/imagens/telaprincipal.jpg');
+    overflow: hidden;
+}
