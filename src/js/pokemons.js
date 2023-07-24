@@ -1,20 +1,20 @@
 const pokeContainer = document.querySelector("#pokeContainer")
 const pokemonCount = 151
 const colors = {
-    fire: '#FDDFDF',
-    grass: '#DEFDE0',
-    electric: '#FCF7DE',
-    water: '#DEF3FD',
-    ground: '#f4e7da',
-    rock: '#d5d5d4',
-    fairy: '#fceaff',
-    poison: '#98d7a5',
-    bug: '#f8d5a3',
+    fire: '#FF0000',
+    grass: '#228B22',
+    electric: '#FFFF00',
+    water: '#00BFFF',
+    ground: '#F4A460',
+    rock: '#8B4513',
+    fairy: '#DDA0DD',
+    poison: '#A020F0',
+    bug: '#9ACD32',
     dragon: '#97b3e6',
-    psychic: '#eaeda1',
-    flying: '#F5F5F5',
-    fighting: '#E6E0D4',
-    normal: '#F5F5F5'
+    psychic: '#FF00FF',
+    flying: '#FFF0F5',
+    fighting: '#8B0000',
+    normal: '#FFE4C4'
 }
 
 const mainTypes = Object.keys(colors);
@@ -57,7 +57,25 @@ const createPokemonCard = (poke) => {
 
     card.innerHTML = pokemonInnerHTML
 
+    card.addEventListener('click', () => openModal({ name, id, type }));
+
     pokeContainer.appendChild(card)
 }
+
+const closeModal = () => {
+    document.getElementById('modal').style.display = 'none';
+};
+
+const openModal = (pokemonInfo) => {
+    const modalPokemonInfo = document.getElementById('modal-pokemon-info');
+    modalPokemonInfo.innerHTML = `
+        <h2>${pokemonInfo.name}</h2>
+        <p>Number: #${pokemonInfo.id}</p>
+        <p>Type: ${pokemonInfo.type}</p>
+        <!-- Aqui você pode adicionar mais informações do Pokémon conforme desejado -->
+    `;
+    document.getElementById('modal').style.display = 'block';
+};
+
 
 fetchPokemons()
