@@ -75,7 +75,8 @@ const createPokemonCard = (poke) => {
     }
     card.innerHTML = pokemonInnerHTML
 
-    card.addEventListener('click', () => openModal({ name, id, type }));
+    card.addEventListener('click', () => openModal({ name, id, types: pokeTypes }));
+
 
     pokeContainer.appendChild(card)
 }
@@ -88,8 +89,8 @@ const openModal = (pokemonInfo) => {
     const modalPokemonInfo = document.getElementById('modal-pokemon-info');
     modalPokemonInfo.innerHTML = `
         <h2>${pokemonInfo.name}</h2>
-        <p>Number: #${pokemonInfo.id}</p>
-        <p>Type: ${pokemonInfo.type}</p>
+        <p>Número: #${pokemonInfo.id}</p>
+        <p>Tipo: ${pokemonInfo.types.join(', ')}</p>
         <!-- Aqui você pode adicionar mais informações do Pokémon conforme desejado -->
     `;
     document.getElementById('modal').style.display = 'block';
