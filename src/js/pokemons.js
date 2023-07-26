@@ -98,11 +98,11 @@ const openModal = async (pokemonInfo) => {
 
     const pokemonInfoHTML = `
         <div class="pokemon-info">
+            <h2>${pokemonInfo.name}</h2>
             <div class="pokemon-img">
                 <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg">
             </div>
             <div class="pokemon-details">
-                <h2>${pokemonInfo.name}</h2>
                 <p>Número: #${id}</p>
                 <p>Tipo: ${pokemonInfo.types.join(', ')}</p>
             </div>
