@@ -37,64 +37,67 @@ body, html{
 
 .conteudo-creditos{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 #charizard{
-    margin-bottom: 600px;
+    
     max-width: 100%;
     max-height: 100%;
 }
 
 .Joao-pokemon{
     display: flex;
-    flex-direction: row;
 }
 
 #brandon{
+    margin: auto;
+    height: auto;
     max-width: 100%;
     max-height: 100%;
     margin-bottom: 20px;
 }
  #swampert{
-    max-width: 50%;
-    max-height: 30%;
+    width: auto;
+    height: auto;
+    max-width: 240px;
+    max-height: 200px;
     margin-top: 160px;
  }
 
 .Vinicius-pokemon{
     display: flex;
-    flex-direction: row;
 }
 
 #callun{
-    max-width: 80%;
+    margin: auto;
+    height: auto;
+    max-width: 70%;
     max-height: 50%;
     margin-top: 20px;
 }
 
 #dialga{
-    max-width: 20%;
-    max-height: 10%;
+    width: auto;
+    height: auto;
+    max-width: 240px;
+    max-height: 200px;
 }
 
-.vinicius {
-    font-family: 'VT323', monospace;
-    font-size: 30px;
-    margin-top: 45px;
-  
-}
 
+
+.vinicius{
+   align-items: center;
+}
 .joao{
-    font-family: 'VT323', monospace;
-    margin-top: 340px;
-    font-size: 30px;
+    
 }
 
 .imginstagram{
-    max-width: 30px;
-    max-height: 50px;
+    max-width: 20px;
+    max-height: 40px;
 }
 
 
@@ -109,14 +112,24 @@ a {
 }
 
 .links-joao{
+    font-family: 'VT323', monospace;
+    font-size: 30px;
     display: flex;
     flex-direction: column;
     margin-left: 300px;
 }
 
 .links-vinicius{
+    font-family: 'VT323', monospace;
+    font-size: 30px;
     display: flex;
     flex-direction: column;
-    margin-left: 30px;
-    margin-top: 40px;
+
+}
+
+.Joao-vinicius{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px;
 }
