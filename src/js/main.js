@@ -2,7 +2,7 @@ const cont = document.querySelector('.jogo');
 
 
 function paginaJogar(){
-    window.location.href='jogar.html';
+    window.location.href='entrar.html';
 }
 
 function paginaPokemon(){
