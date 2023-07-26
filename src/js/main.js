@@ -17,6 +17,9 @@ function voltar(){
     window.location.href='index.html';
 }
 
+function selecionarPokemon(){
+    window.location.href='selecao.html';
+}
 //}
 
 /*function mostrarMenu() {
