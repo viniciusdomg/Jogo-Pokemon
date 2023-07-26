@@ -86,8 +86,8 @@ h1 {
     background: linear-gradient(to right, #d4d3dd, #efefbb);
     padding: 20px;
     border-radius: 10px;
-    max-width: 700px;
-    max-height: 80%;
+    width: auto;
+    max-height: none;
     overflow-y: auto;
 }
 
@@ -99,26 +99,18 @@ h1 {
     cursor: pointer;
 }
 
-.pokemon-info, .stats {
-    /* Remove 'flex: 1;' to keep both sections side by side */
-    /* flex: 1; */
+.modal-pokemon-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.pokemon-img {
-    /* Adjust the width to your preference */
-    width: 40%;
+.stats {
+    margin-left: 100px;
 }
 
-.pokemon-details {
-    /* Adjust the width to your preference */
-    width: 60%;
+.pokemon-img img {
+    width: 50%;
 }
-
-.pokemon-details h2 {
-    margin-bottom: 10px;
-}
-
-.pokemon-details p {
-    margin: 5px 0;
-}
-
+ 
