@@ -1,3 +1,38 @@
 body{
-    
+    background: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 920px;
+}
+
+.entrar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#botao-sair{
+    position: fixed;
+    align-items: flex-end;
+    bottom: 60px;
+    left: 7%;
+}
+
+#botao-sair:hover{
+    background-color: #d3d3d3 ;
+}
+
+#jogar:hover{
+    background-color: #d3d3d3 ;
+}
+
+.nickname{
+    width: 100%;
+    margin: 10%;
+}
+
+.img-genero{
+    max-width: 240px;
+    max-height: 240px;
 }

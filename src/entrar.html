@@ -7,11 +7,40 @@
     <link rel="stylesheet" href="css/entrar.css">
 </head>
 <body>
-    <form >
+    <div class="entrar">
+        <form action="" method="post">
+            <div class="nickname">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <br>
+            </div>
 
-    </form>
-    <h1>Tela do jogo</h1>
-    <input type="button" value="Sair" onclick="voltar()">
+            <div>
+                <label>
+                    <input type="radio" name="genero" value="mulher"> <img class="img-genero" src="/src/imagens/leaf.png" alt="Leaf">
+                </label>
+                <label>
+                    <input type="radio" name="genero" value="homem"> <img class="img-genero" src="/src/imagens/red.png" alt="Red">
+                </label>
+            </div>
+            <br> 
+
+            <div class="dificuldade">
+                <label>
+                    <input type="radio" name="dificuldade" value="Facil">Fácil
+                </label>
+                <label>
+                    <input type="radio" name="dificuldade" value="Medio">Médio
+                </label>
+                <label>
+                    <input type="radio" name="dificuldade" value="Dificil">Difícil
+                </label>
+            </div>
+            <br>
+            <input id="jogar" type="submit" value="jogar">       
+        </form>
+    </div>
+    <input id="botao-sair" type="button" value="Sair" onclick="voltar()">
     <script src="js/main.js"></script>
 </body>
 </html>
