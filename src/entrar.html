@@ -8,38 +8,43 @@
 </head>
 <body>
     <div class="entrar">
-        <form action="" method="post">
+        <form action="" method="get">
             <div class="nickname">
                 <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu apelido" required>
                 <br>
             </div>
 
-            <div>
-                <label>
-                    <input type="radio" name="genero" value="mulher"> <img class="img-genero" src="/src/imagens/leaf.png" alt="Leaf">
+            <div class="generos">
+                <label>Selecione seu personagem:</label><br><br>
+                <label id="mulher">
+                    <input class="genero" type="radio" name="genero" value="mulher" required> <img class="img-genero" src="/src/imagens/leaf.png" alt="Leaf">
                 </label>
                 <label>
-                    <input type="radio" name="genero" value="homem"> <img class="img-genero" src="/src/imagens/red.png" alt="Red">
+                    <input class="genero" type="radio" name="genero" value="homem"> <img class="img-genero" src="/src/imagens/red.png" alt="Red">
                 </label>
             </div>
             <br> 
 
             <div class="dificuldade">
+                <label>Dificuldade:</label><br><br>
                 <label>
-                    <input type="radio" name="dificuldade" value="Facil">Fácil
+                    <input class="dificuldades" type="radio" name="dificuldade" value="Facil" required>Fácil
+                </label>
+                <label id="medio">
+                    <input class="dificuldades" type="radio" name="dificuldade" value="Medio">Médio
                 </label>
                 <label>
-                    <input type="radio" name="dificuldade" value="Medio">Médio
-                </label>
-                <label>
-                    <input type="radio" name="dificuldade" value="Dificil">Difícil
+                    <input class="dificuldades" type="radio" name="dificuldade" value="Dificil">Difícil
                 </label>
             </div>
             <br>
-            <input id="jogar" type="submit" value="jogar">       
+            <input id="jogar" type="submit" value="Jogar">
+            <input id="reset" type="reset" value="Limpar">
         </form>
+        
     </div>
+    
     <input id="botao-sair" type="button" value="Sair" onclick="voltar()">
     <script src="js/main.js"></script>
 </body>
