@@ -1,38 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
 body{
-    background: grey;
+    background: linear-gradient(to right, #d4d3dd, #efefbb);
     display: flex;
     align-items: center;
     justify-content: center;
     height: 920px;
+    overflow-y: hidden;
+    font-family: 'Lato', sans-serif;
 }
 
 .entrar{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    margin-bottom: 5%;
 }
+ 
+label{
+    cursor: pointer;
+    position: relative;/* Espaço para a bolinha personalizada */
+    margin-right: 8px; /* Espaçamento entre as opções */
+    font-size: 18px; /* Ajuste o tamanho da fonte conforme necessário */
+    color: #333;
+}
+
+
+.nickname{
+    width: 100%;
+    margin-bottom: 40%;
+}
+
+#nome{
+    border-radius: 15px; 
+    padding: 10px 20px; 
+    margin: 5px; 
+    background-color: white; 
+    color: black; 
+    border: none; 
+    cursor: pointer; 
+    width: 55%;
+}
+
+
+.generos{
+    margin-bottom: 35%;
+    width: 100%;
+}
+
+.img-genero{
+    max-width: 240px;
+    max-height: 240px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+}
+
+#mulher{
+    margin-right: 50px;
+}
+
+.genero{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.genero:checked + .img-genero{
+    border-color: #4CAF50;
+}
+
+.dificuldade{
+    margin-bottom: 10%;
+}
+
+#medio{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.dificuldades{
+    appearance: none;
+    margin-right: 25px;
+}
+
+.dificuldades::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px; /* Tamanho da bolinha personalizada */
+    height: 20px; /* Tamanho da bolinha personalizada */
+    border: 2px solid #4CAF50; /* Cor da borda da bolinha não marcada */
+    border-radius: 50%; /* Tornar a bolinha redonda */
+    background-color: transparent; /* Fundo transparente para a bolinha */
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.dificuldades:checked::before {
+    border-color: #4CAF50;
+    background-color: #4CAF50; 
+}
+
+
+
+#jogar{
+    border-radius: 15px; 
+    padding: 10px 20px; 
+    margin: 5px; 
+    background-color: #4CAF50; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+}
+
+#jogar:hover{
+    background-color: #d3d3d3;
+}
+
+
+#reset{
+    border-radius: 15px; 
+    padding: 10px 20px; 
+    margin: 5px; 
+    background-color: #F5B400; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+}
+
+#reset:hover{
+    background-color: #d3d3d3;
+}
+
 
 #botao-sair{
     position: fixed;
     align-items: flex-end;
     bottom: 60px;
     left: 7%;
+    border-radius: 15px; 
+    padding: 10px 20px; 
+    margin: 5px; 
+    background-color: #CF4C50; 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
 }
 
 #botao-sair:hover{
-    background-color: #d3d3d3 ;
-}
-
-#jogar:hover{
-    background-color: #d3d3d3 ;
-}
-
-.nickname{
-    width: 100%;
-    margin: 10%;
-}
-
-.img-genero{
-    max-width: 240px;
-    max-height: 240px;
+    background-color: #999898 ;
 }
