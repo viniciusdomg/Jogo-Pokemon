@@ -89,4 +89,39 @@ const createPokemonCard = (poke) => {
     pokeContainer.appendChild(card)
 }
 
+const closeModal = () => {
+    document.getElementById('modal').style.display = 'none';
+};
+
+const openModal = async (pokemonInfo) => {
+    const modalPokemonInfo = document.getElementById('modal-pokemon-info');
+    const id = parseInt(pokemonInfo.id);
+
+        const statsHTML = pokemonInfo.status.map(stat => `
+        <p><strong>${stat.stat.name}:</strong> ${stat.base_stat}</p>
+    `).join('');
+
+    const pokemonInfoHTML = `
+        <div class="pokemon-info">
+            <h2>${pokemonInfo.name}</h2>
+            <div class="pokemon-img">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg">
+            </div>
+            <div class="pokemon-details">
+                <p>Número: #${id}</p>
+                <p>Tipo: ${pokemonInfo.types.join(', ')}</p>
+            </div>
+        </div>
+        <div class="stats">
+            <h3>Status:</h3>
+            ${statsHTML}
+        </div>
+    `;
+
+    modalPokemonInfo.innerHTML = pokemonInfoHTML;
+    document.getElementById('modal').style.display = 'block';
+};
+
+
+
 fetchPokemons()
