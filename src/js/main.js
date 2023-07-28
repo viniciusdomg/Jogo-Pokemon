@@ -21,6 +21,10 @@ function selecionarPokemon(){
     window.location.href='selecao.html';
 }
 
+function luta(){
+    window.location.href='luta.html';
+}
+
 // Validacao do formulario de "entrar".
 
 document.getElementById("formEntrar").addEventListener("submit", function(event) {
