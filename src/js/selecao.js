@@ -43,6 +43,7 @@ const createPokemonCard = (poke) => {
     const name = poke.name[0].toUpperCase() + poke.name.slice(1)
     const id = poke.id.toString().padStart(3,'0')
     const status = poke.stats
+    const ataques = poke.moves
 
     const pokeTypes = poke.types.map(type => type.type.name)
     let pokemonInnerHTML = '';
@@ -83,7 +84,7 @@ const createPokemonCard = (poke) => {
     }
     card.innerHTML = pokemonInnerHTML
 
-    card.addEventListener('click', () => openModal({ name, id, types: pokeTypes, status}));
+    card.addEventListener('click', () => openModal({ name, id, types: pokeTypes, status, ataques}));
 
 
     pokeContainer.appendChild(card)
@@ -117,6 +118,11 @@ const openModal = async (pokemonInfo) => {
             ${statsHTML}
         </div>
     `;
+
+    console.log("Ataques do Pokémon:");
+    pokemonInfo.ataques.forEach(move => {
+      console.log(move.move.name);
+    });
 
     modalPokemonInfo.innerHTML = pokemonInfoHTML;
     document.getElementById('modal').style.display = 'block';
