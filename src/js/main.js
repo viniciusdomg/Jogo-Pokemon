@@ -20,21 +20,19 @@ function voltar(){
 function selecionarPokemon(){
     window.location.href='selecao.html';
 }
-//}
 
-/*function mostrarMenu() {
-    fetch('https://pokeapi.co/api/v2/pokemon/', {method: 'GET'})
-        .then(resp => resp.json())
-        .then(function(json){
-            console.log(json);
-    
-            //esse "results" é onde está localizado os dados da API
-            json.results.map(function(results){ 
-                cont.innerHTML +=`
-                <div class="card"> <img src=` +results.image+`> 
-                <strong><font size="5">`+results.name+` </font></strong><br>
-                `;
-        })
-    })
-}
- mostrarMenu();*/
+// Validacao do formulario de "entrar".
+
+document.getElementById("formEntrar").addEventListener("submit", function(event) {
+    const nome = document.getElementById("nome").value;
+    const genero = document.querySelector('input[name="genero"]:checked');
+    const dificuldade = document.querySelector('input[name="dificuldade"]:checked');
+
+    if (!nome || !genero || !dificuldade) {
+        alert("Preencha todos os campos obrigatórios!");
+        event.preventDefault();
+    } else {
+        selecionarPokemon();
+        event.preventDefault();
+    }
+});

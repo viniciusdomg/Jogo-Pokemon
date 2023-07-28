@@ -1,0 +1,11 @@
+#vida{
+    width: 300px;
+    height: 20px;
+    background-color: #f0f0f0;
+}
+
+#vidaFill{
+    height: 100%;
+    background-color: #4caf50;
+    width: 0;
+}
