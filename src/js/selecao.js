@@ -17,35 +17,15 @@ const colors = {
     normal: '#FFE4C4'
 }
 
-function passa_ataque(poke) {
-    let listaAtaques = []
-    switch (poke.id) {
-        case 3:
-          listaAtaques.push(poke.moves[0])
-          break;
-        case 2:
-            listaAtaques.push(poke.moves[0])
-          // Code to execute when expression === value2
-          break;
-        // Add more cases as needed
-        default:
-            listaAtaques.push(poke.moves[0])
-          // Code to execute when none of the cases match the expression
-          break;
-      }
-      
-}
-
-const pokemons = [3,6,9,12,15,18,20,24,25,26,31,34,38,42,45,51,55,57,59,62,65,68,71,73,80,85,89,91,94,95,97,99
-    ,101,103,105,106,107,115,117,121,123,125,126,127,128,130,131
-    ,134,135,136,139,141,142,143,149]
+// const pokemons = [3,6,9,12,15,18,20,24,25,26,31,34,38,42,45,51,55,57,59,62,65,68,71,73,80,85,89,91,94,95,97,99
+//     ,101,103,105,106,107,115,117,121,123,125,126,127,128,130,131
+//     ,134,135,136,139,141,142,143,149]
 
 const mainTypes = Object.keys(colors);
 
 const fetchPokemons = async () => {
-    for (let i = 1; i < pokemons.length; i++) {
-        let id = pokemons[i-1];
-        await getPokemons(id)
+    for (let i = 1; i <= pokemonCount; i++) {
+        await getPokemons(i)
     }
 }
 
