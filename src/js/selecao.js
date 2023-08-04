@@ -17,7 +17,6 @@ const colors = {
     normal: '#FFE4C4'
 }
 
-let pokemonDataArray = []; // Array para armazenar os dados dos Pokémon
 let selectedPokemon = [];
 const maxSelected = 6; // Número máximo de Pokémon selecionados
 const selecionarButton = document.querySelector("#selecionarButton");
@@ -114,41 +113,11 @@ const createPokemonCard = (poke) => {
     pokeContainer.appendChild(card);
 }
 
-// const showSelectedPokemon = () => {
-//     const selectedPokemonDiv = document.querySelector("#selectedPokemon");
-//     selectedPokemonDiv.innerHTML = "";
-
-//     selectedPokemon.forEach(pokemonId => {
-//         const selectedCard = document.createElement('div');
-//         selectedCard.classList.add('selected-pokemon');
-        
-//         // Encontre os dados do Pokémon no array usando o ID
-//         const selectedPokemonData = pokemonDataArray.find(pokemon => pokemon.id === parseInt(pokemonId));
-        
-//         if (selectedPokemonData) {
-//             selectedCard.innerText = `Pokemon: ${selectedPokemonData.name}`;
-//             selectedPokemonDiv.appendChild(selectedCard);
-//         }
-//     });
-
-//     selectedCountDiv.innerText = `${selectedPokemon.length}/${maxSelected}`;
-
-//     // Habilitar ou desabilitar o botão com base no número máximo selecionado
-//     if (selectedPokemon.length === maxSelected) {
-//         selecionarButton.disabled = false;
-//     } else {
-//         selecionarButton.disabled = true;
-//     }
-// };
-
-// selecionarButton.addEventListener('click', () => {
-//     // Faça algo com os Pokémon selecionados, por exemplo, exibir uma mensagem
-//     alert(`Você selecionou os Pokémon: ${selectedPokemon.join(', ')}`);
-// });
-
 selecionarButton.addEventListener('click', () => {
     // Faça algo com os Pokémon selecionados, por exemplo, exibir uma mensagem
     alert(`Você selecionou os Pokémon: ${selectedPokemon.join(', ')}`);
 });
 
 fetchPokemons()
+
+window.meuArray = selectPokemon;

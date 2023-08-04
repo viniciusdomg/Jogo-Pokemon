@@ -1,3 +1,7 @@
+const meuArray = window.meuArray;
+
+console.log(selectPokemon)
+
 const progress = 50;
 const progresspc = 50;
 
