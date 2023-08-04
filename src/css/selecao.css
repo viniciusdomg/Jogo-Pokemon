@@ -97,3 +97,7 @@ h1 {
     font-size: 20px;
     cursor: pointer;
 }
+
+.selected {
+    border: 3px solid yellow; /* Pode ser qualquer estilo de destaque que você preferir */
+}
