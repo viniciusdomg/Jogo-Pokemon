@@ -17,9 +17,11 @@ const colors = {
     normal: '#FFE4C4'
 }
 
-// const pokemons = [3,6,9,12,15,18,20,24,25,26,31,34,38,42,45,51,55,57,59,62,65,68,71,73,80,85,89,91,94,95,97,99
-//     ,101,103,105,106,107,115,117,121,123,125,126,127,128,130,131
-//     ,134,135,136,139,141,142,143,149]
+let pokemonDataArray = []; // Array para armazenar os dados dos Pokémon
+let selectedPokemon = [];
+const maxSelected = 6; // Número máximo de Pokémon selecionados
+const selecionarButton = document.querySelector("#selecionarButton");
+const selectedCountDiv = document.querySelector("#selectedCount");
 
 const mainTypes = Object.keys(colors);
 
@@ -35,6 +37,20 @@ const getPokemons = async (id) => {
     const data = await response.json()
     createPokemonCard(data)
 }
+
+const selectPokemon = (id) => {
+    const allPokemonCards = document.querySelectorAll('.pokemon');
+    allPokemonCards.forEach(card => {
+        card.classList.remove('selected');
+    });
+
+    const selectedPokemonCard = document.querySelector(`#pokemon-${id}`);
+    selectedPokemonCard.classList.add('selected');
+
+    // Aqui você pode fazer o que quiser com o Pokémon selecionado,
+    // como mostrar detalhes ou executar outras ações.
+};
+
 
 const createPokemonCard = (poke) => {
     const card = document.createElement('div')
@@ -83,57 +99,56 @@ const createPokemonCard = (poke) => {
     }
     card.innerHTML = pokemonInnerHTML
 
-    card.addEventListener('click', () => openModal({ name, id, types: pokeTypes, status, ataques}));
-
-
-    pokeContainer.appendChild(card)
-}
-
-const closeModal = () => {
-    document.getElementById('modal').style.display = 'none';
-};
-
-const openModal = async (pokemonInfo) => {
-    const modalPokemonInfo = document.getElementById('modal-pokemon-info');
-    const id = parseInt(pokemonInfo.id);
-
-        const statsHTML = pokemonInfo.status.map(stat => `
-        <p><strong>${stat.stat.name}:</strong> ${stat.base_stat}</p>
-    `).join('');
-
-    const pokemonInfoHTML = `
-        <div class="pokemon-info">
-            <h2>${pokemonInfo.name}</h2>
-            <div class="pokemon-img">
-                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg">
-            </div>
-            <div class="pokemon-details">
-                <p>Número: #${id}</p>
-                <p>Tipo: ${pokemonInfo.types.join(', ')}</p>
-            </div>
-        </div>
-        <div class="stats">
-            <h3>Status:</h3>
-            ${statsHTML}
-        </div>
-    `;
-
-    console.log("--------------------")
-    const listaAtaques = passa_ataque(pokemonInfo)
-    listaAtaques.forEach((move) => {console.log(move);});
-    console.log("--------------------")
-
-    console.log("Ataques do Pokémon:");
-    pokemonInfo.ataques.forEach((move, index) => {
-    console.log(index + 0 + " " + move.move.name);
+    card.addEventListener('click', () => {
+        if (selectedPokemon.includes(id)) {
+            selectedPokemon = selectedPokemon.filter(pokemonId => pokemonId !== id);
+            card.classList.remove('selected');
+        } else if (selectedPokemon.length < maxSelected) {
+            selectedPokemon.push(id);
+            card.classList.add('selected');
+        }
+        
+        // showSelectedPokemon();
     });
 
+    pokeContainer.appendChild(card);
+}
 
+// const showSelectedPokemon = () => {
+//     const selectedPokemonDiv = document.querySelector("#selectedPokemon");
+//     selectedPokemonDiv.innerHTML = "";
 
-    modalPokemonInfo.innerHTML = pokemonInfoHTML;
-    document.getElementById('modal').style.display = 'block';
-};
+//     selectedPokemon.forEach(pokemonId => {
+//         const selectedCard = document.createElement('div');
+//         selectedCard.classList.add('selected-pokemon');
+        
+//         // Encontre os dados do Pokémon no array usando o ID
+//         const selectedPokemonData = pokemonDataArray.find(pokemon => pokemon.id === parseInt(pokemonId));
+        
+//         if (selectedPokemonData) {
+//             selectedCard.innerText = `Pokemon: ${selectedPokemonData.name}`;
+//             selectedPokemonDiv.appendChild(selectedCard);
+//         }
+//     });
 
+//     selectedCountDiv.innerText = `${selectedPokemon.length}/${maxSelected}`;
 
+//     // Habilitar ou desabilitar o botão com base no número máximo selecionado
+//     if (selectedPokemon.length === maxSelected) {
+//         selecionarButton.disabled = false;
+//     } else {
+//         selecionarButton.disabled = true;
+//     }
+// };
+
+// selecionarButton.addEventListener('click', () => {
+//     // Faça algo com os Pokémon selecionados, por exemplo, exibir uma mensagem
+//     alert(`Você selecionou os Pokémon: ${selectedPokemon.join(', ')}`);
+// });
+
+selecionarButton.addEventListener('click', () => {
+    // Faça algo com os Pokémon selecionados, por exemplo, exibir uma mensagem
+    alert(`Você selecionou os Pokémon: ${selectedPokemon.join(', ')}`);
+});
 
 fetchPokemons()
