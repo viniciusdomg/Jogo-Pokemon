@@ -1,4 +1,4 @@
-const progress = 80;
+const progress = 50;
 const progresspc = 50;
 
 const progressFill = document.getElementById("vidaFill");

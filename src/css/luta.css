@@ -1,3 +1,11 @@
+body, html{
+    height: 100%;
+    background: linear-gradient(to right, #d4d3dd, #efefbb);
+    background-size: cover;
+    background-position: center;
+    overflow-y: hidden;
+}
+
 #barras-de-vida{
     display: flex;
     justify-content: space-between;
