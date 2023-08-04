@@ -1,6 +1,3 @@
-const meuArray = window.meuArray;
-
-console.log(selectPokemon)
 
 const progress = 50;
 const progresspc = 50;
@@ -10,3 +7,8 @@ progressFill.style.width = `${progress}%`;
 
 const progresspcFill = document.getElementById("vidaPcFill");
 progresspcFill.style.width = `${progresspc}%`;
+
+
+const meuArray = window.meuArray;
+
+console.log(selectPokemon);
