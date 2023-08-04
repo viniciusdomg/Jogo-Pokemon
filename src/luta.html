@@ -8,17 +8,38 @@
 </head>
 <body>
 
-    <div id="barras-de-vida">
-       
-        <div id="vida">
-            <div id="vidaFill"></div>
+    <div>
+        <div id="barras-de-vida">
+            <div>
+                <div class="nome-genero">
+                    <label>Pokemon da pessoa</label>
+                </div>
+                <div id="vida">
+                    <div id="vidaFill"></div>
+                </div>
+            </div>
+            <div>
+                <div class="nome-genero">
+                    <label>Pokemon do computador</label>
+                </div>
+                <div id="vidaPc">
+                    <div id="vidaPcFill"></div>
+                </div>
+            </div>
         </div>
 
-        
-        <div id="vidaPc">
-            <div id="vidaPcFill"></div>
+        <div class="atq-container">
+            <div>
+                <button type="button" name="attack1" class="btn-ataque"></button>
+                <button type="button" name="attack2" class="btn-ataque"></button>
+            </div>
+            <div>
+                <button type="button" name="attack3" class="btn-ataque"></button>
+                <button type="button" name="attack4" class="btn-ataque"></button>
+            </div>
         </div>
-    </div>
+
+    </div>  
     <script src="js/luta.js"></script>
 
 </body>
