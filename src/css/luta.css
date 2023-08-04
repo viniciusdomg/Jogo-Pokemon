@@ -2,17 +2,57 @@
 
 body, html{
     height: 100%;
-    background: linear-gradient(to right, #d4d3dd, #efefbb);
-    background-size: cover;
-    background-position: center;
+    width: 100%;
     overflow: hidden;
     font-family: 'VT323', monospace;
+    margin: 0;
+    padding: 0;
 }
+
+.arena {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #AAAAAA 10%, #000000 80%); /* Gradiente radial de cinza claro a preto */
+    background-size: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  .arena::before, .arena::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: #8B0000; /* Cor vermelha para as bordas da arena */
+  }
+  
+  .arena::before {
+    top: 0;
+  }
+  
+  .arena::after {
+    bottom: 0;
+  }
+  
+  .arena::before, .arena::after {
+    z-index: 1;
+  }
+  
+  .arena::before {
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }
+  
+  .arena::after {
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+  }
 
 #barras-de-vida{
     display: flex;
     justify-content: space-between;
-    margin: 0 60px;
+    margin: 20px 60px;
 }
 
 #vida{
@@ -44,6 +84,7 @@ body, html{
 }
 
 .nome-genero{
+    color: #AAAAAA;
     font-size: 22px;
 }
 
