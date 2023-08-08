@@ -113,11 +113,19 @@ const createPokemonCard = (poke) => {
     pokeContainer.appendChild(card);
 }
 
+const showSelectedPokemon = () => {
+    selectedCountDiv.textContent = `Pokémon selecionados: ${selectedPokemon.length}/${maxSelected}`;
+};
+
 selecionarButton.addEventListener('click', () => {
-    // Faça algo com os Pokémon selecionados, por exemplo, exibir uma mensagem
-    alert(`Você selecionou os Pokémon: ${selectedPokemon.join(', ')}`);
+    if (selectedPokemon.length > 0) {
+        const selectedPokemonIds = selectedPokemon.join(',');
+        window.location.href = `luta.html?pokemonIds=${selectedPokemonIds}`;
+    } else {
+        alert("Selecione pelo menos um Pokémon antes de prosseguir.");
+    }
 });
 
 fetchPokemons()
 
-window.meuArray = selectPokemon;
+window.selectedPokemon = selectedPokemon;

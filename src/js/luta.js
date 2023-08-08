@@ -8,7 +8,8 @@ progressFill.style.width = `${progress}%`;
 const progresspcFill = document.getElementById("vidaPcFill");
 progresspcFill.style.width = `${progresspc}%`;
 
+const urlParams = new URLSearchParams(window.location.search);
+const pokemonIds = urlParams.get("pokemonIds");
 
-const meuArray = window.meuArray;
+console.log(pokemonIds);
 
-console.log(selectPokemon);
